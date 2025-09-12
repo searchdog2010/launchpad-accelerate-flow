@@ -3,130 +3,133 @@
 @tailwind utilities;
 
 /* Community Launch Accelerator Workshop Funnel Design System 
-High-converting, professional, energetic design for coaching business
+Space-themed cosmic launch aesthetic with deep navy and vibrant orange
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Base colors for clean, professional background */
-    --background: 0 0% 98%;
-    --foreground: 215 25% 15%;
+    /* Base colors - deep space navy theme */
+    --background: 225 25% 12%;
+    --foreground: 0 0% 95%;
     
-    /* Cards and surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    /* Cards and surfaces - slightly lighter navy */
+    --card: 225 20% 16%;
+    --card-foreground: 0 0% 95%;
     
     /* Popover elements */
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 225 20% 16%;
+    --popover-foreground: 0 0% 95%;
     
-    /* Primary brand colors - vibrant orange for energy and action */
-    --primary: 25 95% 53%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 25 95% 48%;
+    /* Primary brand colors - vibrant cosmic orange */
+    --primary: 20 100% 60%;
+    --primary-foreground: 225 25% 12%;
+    --primary-hover: 20 100% 55%;
     
-    /* Secondary - deep blue for trust and professionalism */
-    --secondary: 220 80% 25%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 220 80% 20%;
+    /* Secondary - deeper navy for contrast */
+    --secondary: 225 30% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --secondary-hover: 225 30% 25%;
     
-    /* Muted elements */
-    --muted: 215 15% 95%;
-    --muted-foreground: 215 15% 45%;
+    /* Muted elements - subtle navy */
+    --muted: 225 20% 18%;
+    --muted-foreground: 0 0% 70%;
     
-    /* Accent - bright gradient colors */
-    --accent: 280 70% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - golden star color */
+    --accent: 45 95% 65%;
+    --accent-foreground: 225 25% 12%;
     
-    /* Success green for conversions */
-    --success: 145 65% 45%;
-    --success-foreground: 0 0% 100%;
+    /* Success - cosmic green */
+    --success: 150 60% 55%;
+    --success-foreground: 225 25% 12%;
     
-    /* Destructive/warning */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    /* Destructive/warning - cosmic red */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 95%;
     
     /* Borders and inputs */
-    --border: 215 15% 90%;
-    --input: 215 15% 92%;
-    --ring: 25 95% 53%;
+    --border: 225 20% 25%;
+    --input: 225 20% 20%;
+    --ring: 20 100% 60%;
     
-    /* Radius for modern feel */
+    /* Radius for modern space-age feel */
     --radius: 0.75rem;
     
-    /* Custom workshop-specific colors */
-    --hero-gradient-start: 25 95% 53%;
-    --hero-gradient-end: 280 70% 60%;
-    --cta-gradient-start: 25 95% 53%;
-    --cta-gradient-end: 25 95% 45%;
-    --feature-highlight: 145 65% 45%;
-    --testimonial-bg: 220 80% 97%;
+    /* Custom space-themed colors */
+    --hero-gradient-start: 225 25% 12%;
+    --hero-gradient-end: 225 30% 8%;
+    --cosmic-orange-start: 20 100% 60%;
+    --cosmic-orange-end: 25 95% 55%;
+    --star-glow: 45 95% 65%;
+    --nebula-purple: 270 60% 35%;
+    --space-cloud: 20 80% 45%;
+    --rocket-flame: 15 100% 65%;
     
-    /* Shadows for depth */
-    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
-    --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.2);
+    /* Shadows for cosmic depth */
+    --shadow-cosmic: 0 4px 20px rgba(255, 107, 53, 0.3);
+    --shadow-deep: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.4);
     
     /* Animation speeds */
     --transition-fast: 0.15s ease;
     --transition-medium: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-slow: 0.8s ease;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 225 25% 12%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 20 100% 60%;
+    --sidebar-primary-foreground: 225 25% 12%;
+    --sidebar-accent: 225 20% 18%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 225 20% 25%;
+    --sidebar-ring: 20 100% 60%;
   }
 
   .dark {
-    --background: 215 25% 8%;
+    /* Dark mode uses same cosmic theme */
+    --background: 225 25% 8%;
     --foreground: 0 0% 95%;
     
-    --card: 215 25% 10%;
+    --card: 225 20% 12%;
     --card-foreground: 0 0% 95%;
     
-    --popover: 215 25% 10%;
+    --popover: 225 20% 12%;
     --popover-foreground: 0 0% 95%;
     
-    --primary: 25 95% 53%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 25 95% 58%;
+    --primary: 20 100% 65%;
+    --primary-foreground: 225 25% 8%;
+    --primary-hover: 20 100% 60%;
     
-    --secondary: 220 80% 35%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 220 80% 40%;
+    --secondary: 225 30% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --secondary-hover: 225 30% 20%;
     
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 225 20% 15%;
+    --muted-foreground: 0 0% 65%;
     
-    --accent: 280 70% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 95% 70%;
+    --accent-foreground: 225 25% 8%;
     
-    --success: 145 65% 50%;
-    --success-foreground: 0 0% 100%;
+    --success: 150 60% 60%;
+    --success-foreground: 225 25% 8%;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 80% 65%;
+    --destructive-foreground: 0 0% 95%;
     
-    --border: 215 25% 20%;
-    --input: 215 25% 18%;
-    --ring: 25 95% 53%;
+    --border: 225 20% 20%;
+    --input: 225 20% 15%;
+    --ring: 20 100% 65%;
     
-    --testimonial-bg: 215 25% 12%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 225 25% 8%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 20 100% 65%;
+    --sidebar-primary-foreground: 225 25% 8%;
+    --sidebar-accent: 225 20% 15%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 225 20% 20%;
+    --sidebar-ring: 20 100% 65%;
   }
+}
 }
 
 @layer base {
@@ -139,29 +142,66 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Custom gradient utilities */
+  /* Custom cosmic gradient utilities */
   .gradient-hero {
     background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
   }
   
+  .gradient-cosmic {
+    background: linear-gradient(135deg, hsl(var(--cosmic-orange-start)), hsl(var(--cosmic-orange-end)));
+  }
+  
   .gradient-cta {
-    background: linear-gradient(135deg, hsl(var(--cta-gradient-start)), hsl(var(--cta-gradient-end)));
+    background: linear-gradient(135deg, hsl(var(--cosmic-orange-start)), hsl(var(--cosmic-orange-end)));
   }
   
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
+  .gradient-space {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--nebula-purple)));
   }
   
-  .shadow-medium {
-    box-shadow: var(--shadow-medium);
+  .shadow-cosmic {
+    box-shadow: var(--shadow-cosmic);
   }
   
-  .shadow-strong {
-    box-shadow: var(--shadow-strong);
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
   }
   
-  /* Smooth transitions */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Cosmic animations */
   .transition-smooth {
     transition: all var(--transition-medium);
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  
+  /* Rocket launch animation */
+  @keyframes rocket-launch {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-20px) scale(1.05); }
+  }
+  
+  .rocket-hover:hover {
+    animation: rocket-launch 0.3s ease-out;
   }
 }

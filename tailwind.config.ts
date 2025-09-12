@@ -63,16 +63,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        hero: {
-          start: "hsl(var(--hero-gradient-start))",
-          end: "hsl(var(--hero-gradient-end))",
+        cosmic: {
+          orange: {
+            start: "hsl(var(--cosmic-orange-start))",
+            end: "hsl(var(--cosmic-orange-end))",
+          },
+          purple: "hsl(var(--nebula-purple))",
+          cloud: "hsl(var(--space-cloud))",
         },
-        cta: {
-          start: "hsl(var(--cta-gradient-start))",
-          end: "hsl(var(--cta-gradient-end))",
-        },
-        feature: "hsl(var(--feature-highlight))",
-        testimonial: "hsl(var(--testimonial-bg))",
+        star: "hsl(var(--star-glow))",
+        flame: "hsl(var(--rocket-flame))",
       },
       borderRadius: {
         lg: "var(--radius)",
