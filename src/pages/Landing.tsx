@@ -12,7 +12,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   const handleJoinWorkshop = () => {
-    window.open("https://gohighticketnow.com/launchpad-accelerator-checkout", "_blank");
+    window.location.href = "https://gohighticketnow.com/launchpad-accelerator-checkout";
   };
 
   return (
