@@ -12,7 +12,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   const handleJoinWorkshop = () => {
-    navigate("/register");
+    window.open("https://gohighticketnow.com/launchpad-accelerator-checkout", "_blank");
   };
 
   return (
