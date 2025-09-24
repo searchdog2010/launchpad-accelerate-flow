@@ -157,6 +157,20 @@ const Payment = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Bottom CTA */}
+            <div className="text-center mt-12 pt-8">
+              <Button 
+                onClick={handlePurchase}
+                className="gradient-cta text-white text-xl py-8 px-12 font-bold shadow-medium hover:shadow-strong transition-all"
+              >
+                Complete Purchase - $17
+              </Button>
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-4">
+                <Shield className="w-4 h-4 text-success" />
+                <span>Secure payment processing</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
