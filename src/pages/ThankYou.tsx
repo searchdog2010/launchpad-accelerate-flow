@@ -8,7 +8,7 @@ const ThankYou = () => {
   const navigate = useNavigate();
 
   const handleUpgradeRecordings = () => {
-    window.location.href = "https://gohighticketnow.com/launchpad-upgrade";
+    navigate("/payment");
   };
 
   return (

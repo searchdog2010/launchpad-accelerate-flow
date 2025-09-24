@@ -1,24 +1,34 @@
-import { useEffect } from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Clock, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  useEffect(() => {
-    // Load the GroupFuel form embed script
-    const script = document.createElement('script');
-    script.src = 'https://link.groupfuel.io/js/form_embed.js';
-    script.async = true;
-    document.head.appendChild(script);
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    businessType: "",
+  });
 
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://link.groupfuel.io/js/form_embed.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Store form data in localStorage for the demo
+    localStorage.setItem("workshopRegistration", JSON.stringify(formData));
+    navigate("/thank-you");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,24 +57,72 @@ const Register = () => {
                 Complete the form below to secure your spot
               </p>
             </CardHeader>
-            <CardContent className="p-0">
-              <iframe
-                src="https://link.groupfuel.io/widget/form/VHDMf0r9xJdTGuqIA27I"
-                style={{width:'100%',height:'789px',border:'none',borderRadius:'15px'}}
-                id="inline-VHDMf0r9xJdTGuqIA27I" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="00. Launchpad Registration"
-                data-height="789"
-                data-layout-iframe-id="inline-VHDMf0r9xJdTGuqIA27I"
-                data-form-id="VHDMf0r9xJdTGuqIA27I"
-                title="00. Launchpad Registration"
-              />
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">First Name *</Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Last Name *</Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="businessType">What type of business do you have? *</Label>
+                  <Input
+                    id="businessType"
+                    name="businessType"
+                    value={formData.businessType}
+                    onChange={handleChange}
+                    placeholder="e.g., Life Coach, Course Creator, Consultant"
+                    required
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full gradient-cta text-white text-lg py-6 font-bold shadow-medium hover:shadow-strong transition-all"
+                >
+                  RESERVE MY FREE SEAT! 🎯
+                </Button>
+              </form>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-muted-foreground">
+                  No spam. Your information is completely secure. 
+                  You can unsubscribe at any time.
+                </p>
+              </div>
             </CardContent>
           </Card>
 
