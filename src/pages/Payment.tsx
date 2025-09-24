@@ -1,33 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, CreditCard, Shield, Download, Play } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { CheckCircle, Shield, Download, Play } from "lucide-react";
 
 const Payment = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    cardNumber: "",
-    expiryDate: "",
-    cvv: "",
-    billingName: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Process payment (demo purposes)
-    navigate("/confirmation");
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handlePurchase = () => {
+    window.open("https://link.groupfuel.io/payment-link/68d35970613b1b5ef6ce3624", "_self");
   };
 
   return (
@@ -48,114 +26,22 @@ const Payment = () => {
       </section>
 
       <div className="container mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Payment Form */}
-          <Card className="shadow-strong">
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-2">
-                <CreditCard className="w-6 h-6 text-primary" />
-                Secure Payment
-              </CardTitle>
-              <p className="text-muted-foreground">
-                Complete your purchase to get instant access to all materials
-              </p>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Purchase Button */}
+          <div className="text-center mb-12">
+            <Button 
+              onClick={handlePurchase}
+              className="gradient-cta text-white text-xl py-8 px-12 font-bold shadow-medium hover:shadow-strong transition-all"
+            >
+              Complete Purchase - $17
+            </Button>
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-4">
+              <Shield className="w-4 h-4 text-success" />
+              <span>Secure payment processing</span>
+            </div>
+          </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="cardNumber">Card Number</Label>
-                  <Input
-                    id="cardNumber"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleChange}
-                    placeholder="1234 5678 9012 3456"
-                    required
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="expiryDate">Expiry Date</Label>
-                    <Input
-                      id="expiryDate"
-                      name="expiryDate"
-                      value={formData.expiryDate}
-                      onChange={handleChange}
-                      placeholder="MM/YY"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="cvv">CVV</Label>
-                    <Input
-                      id="cvv"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleChange}
-                      placeholder="123"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="billingName">Billing Name</Label>
-                  <Input
-                    id="billingName"
-                    name="billingName"
-                    value={formData.billingName}
-                    onChange={handleChange}
-                    placeholder="Name on card"
-                    required
-                  />
-                </div>
-
-                <div className="bg-muted p-4 rounded-lg">
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Workshop Recordings + Bonuses</span>
-                    <span className="font-bold">$17.00</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm text-muted-foreground">
-                    <span>Processing Fee</span>
-                    <span>$0.00</span>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="flex justify-between items-center font-bold text-lg">
-                    <span>Total</span>
-                    <span className="text-primary">$17.00</span>
-                  </div>
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full gradient-cta text-white text-lg py-6 font-bold shadow-medium hover:shadow-strong transition-all"
-                >
-                  Complete Purchase - $17
-                </Button>
-
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Shield className="w-4 h-4 text-success" />
-                  <span>Secure 256-bit SSL encrypted payment</span>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Order Summary */}
+          {/* Order Details */}
           <div className="space-y-8">
             <Card className="border-l-4 border-l-primary shadow-medium">
               <CardContent className="p-6">
